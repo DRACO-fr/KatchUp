@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="KatchUp builds reliable, functional and affordable websites for businesses.">
+<title>KatchUp — Websites That Work</title><link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+PHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iMTQiIGZpbGw9IiMxMTEyMTQiLz48dGV4dCB4PSIzMiIgeT0iNDUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgSGVsdmV0aWNhLCBzYW5zLXNlcmlmIiBmb250LXdlaWdodD0iODAwIiBmb250LXNpemU9IjM2IiBmaWxsPSIjZmZiZjAwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5LPC90ZXh0Pjwvc3ZnPg==">
+<style>
+:root{--ink:#111214;--muted:#686b73;--line:#e7e7ea;--soft:#f5f5f7;--yellow:#ffbf00;--r:24px}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth;overflow-x:hidden}
+body{font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);line-height:1.55;overflow-x:hidden;max-width:100vw}
+a{text-decoration:none;color:inherit}button,input,textarea,select{font:inherit}.wrap{width:min(1160px,92%);margin:auto}
+header{position:fixed;inset:0 0 auto;z-index:20;background:#ffffffdf;backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
+nav{height:78px;display:flex;align-items:center;justify-content:space-between;position:relative}.brand{display:flex;align-items:center;gap:12px;font-weight:900}.brand img{width:45px;height:45px;object-fit:cover;border-radius:13px}
+.links{display:flex;gap:27px;font-size:14px;font-weight:750;color:#555860}.links a:hover{color:#111}.navbtn{background:#111;color:#fff;padding:11px 17px;border-radius:999px;font-size:14px;font-weight:800}
+.hero{padding:165px 0 105px;background:radial-gradient(circle at 82% 15%,#ffbf0038,transparent 28%),radial-gradient(circle at 15% 80%,#ffd84a20,transparent 30%)}
+.heroGrid{display:grid;grid-template-columns:1.08fr .92fr;gap:70px;align-items:center}.eyebrow{display:inline-flex;gap:8px;align-items:center;padding:7px 12px;border:1px solid #eadcae;border-radius:999px;background:#fffaf0;font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:.1em}.dot{width:7px;height:7px;background:var(--yellow);border-radius:50%}
+h1{font-size:clamp(48px,7vw,84px);line-height:.94;letter-spacing:-.065em;margin:22px 0}h1 span{color:#111;text-decoration:underline;text-decoration-color:var(--yellow);text-decoration-thickness:9px;text-underline-offset:2px}.lead{font-size:18px;color:var(--muted);max-width:620px}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}.btn{border:0;padding:14px 20px;border-radius:14px;font-size:14px;font-weight:900;cursor:pointer;display:inline-flex;align-items:center;justify-content:center}.yellow{background:var(--yellow)}.dark{background:#111;color:#fff}.light{background:#fff;border:1px solid var(--line)}
+.heroCard{background:#111;color:#fff;border-radius:32px;padding:34px;box-shadow:0 22px 70px #1011141a;overflow:hidden;position:relative}.heroCard:before{content:"";position:absolute;width:230px;height:230px;border-radius:50%;background:var(--yellow);right:-110px;top:-110px}.heroCard>*{position:relative}.heroCard h2{font-size:32px;line-height:1.05;letter-spacing:-.04em}.heroCard p{color:#c7c9ce;margin-top:12px}.price{margin-top:28px;padding:22px;border:1px solid #ffffff1c;border-radius:20px}.price small{display:block;color:#aaa}.price strong{font-size:40px;letter-spacing:-.05em}.price em{font-style:normal;color:#bbb}.priceRow{display:flex;justify-content:space-between;align-items:end}.ticks{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px}.ticks div{border:1px solid #ffffff18;padding:11px;border-radius:12px;font-size:13px;color:#ddd}
+section{padding:100px 0}.soft{background:var(--soft)}.head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:40px}.head h2{font-size:46px;line-height:1;letter-spacing:-.055em}.head p{max-width:520px;color:var(--muted)}
+.cards,.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{padding:29px;border:1px solid var(--line);border-radius:var(--r);background:#fff}.icon{width:48px;height:48px;border-radius:15px;background:#fff4c9;display:grid;place-items:center;margin-bottom:20px}.card h3{margin-bottom:8px}.card p,.step p{color:var(--muted);font-size:14px}.step{border-top:2px solid #111;padding-top:18px}.step small{font-weight:900;color:#999}.step h3{font-size:24px;margin:8px 0}
+.order{display:grid;grid-template-columns:.7fr 1.3fr;gap:24px;align-items:start}.info{background:#111;color:#fff;border-radius:28px;padding:32px;position:sticky;top:105px}.info h2{font-size:38px;line-height:1;letter-spacing:-.05em}.info p{color:#c5c7cc;margin-top:12px}.list{margin-top:25px;display:grid;gap:10px;color:#ddd;font-size:14px}.list b{color:var(--yellow)}
+.form{border:1px solid var(--line);border-radius:28px;padding:30px;box-shadow:0 22px 70px #10111412}.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;min-width:0}.field{display:flex;flex-direction:column;gap:7px;min-width:0}.full{grid-column:1/-1}label{font-size:13px;font-weight:850}
+input,textarea,select{border:1px solid #dfe0e5;border-radius:13px;padding:12px;outline:none;width:100%;max-width:100%;min-width:0}textarea{min-height:125px;resize:vertical}.options{display:grid;grid-template-columns:1fr 1fr;gap:10px}.opt{border:1px solid var(--line);padding:12px;border-radius:13px;font-size:13px}.opt input{width:auto;margin-right:7px}
+.total{margin-top:22px;padding:19px;border:1px solid #f0dda1;background:#fff8df;border-radius:18px;display:flex;justify-content:space-between;align-items:center;gap:15px}.total small{display:block;color:#777}.total strong{font-size:32px}.note{font-size:12px;color:#777;margin-top:11px}
+.termsBox{border:1px solid var(--line);border-radius:24px;padding:28px;background:#fafafa}.termsBox h3{margin:18px 0 7px}.termsBox h3:first-child{margin-top:0}.termsBox p{font-size:14px;color:#5f6269}
+footer{padding:30px 0;border-top:1px solid var(--line);color:#777;font-size:13px}.foot{display:flex;justify-content:space-between;gap:20px}.mobile{display:none;border:0;background:none;font-size:25px;line-height:1;cursor:pointer;padding:6px}
+@media(max-width:900px){.heroGrid,.order{grid-template-columns:1fr}.info{position:static}.cards,.steps{grid-template-columns:1fr}.links{display:none}.mobile{display:block}.grid{grid-template-columns:1fr}.full{grid-column:auto}
+.links.open{display:flex;flex-direction:column;gap:4px;position:absolute;top:100%;left:0;right:0;background:#fff;border:1px solid var(--line);border-top:0;border-radius:0 0 20px 20px;padding:14px 6%;box-shadow:0 22px 50px #10111420}
+.links.open a{padding:12px 4px;border-bottom:1px solid var(--line);font-size:15px}.links.open a:last-child{border-bottom:0}}
+@media(max-width:560px){section{padding:72px 0}.hero{padding-top:130px}h1{font-size:52px}.heroCard,.info,.form{padding:24px;border-radius:22px}.head{display:block}.head h2{font-size:36px;margin-bottom:12px}.navbtn{display:none}.foot{display:block}.foot div+div{margin-top:7px}}
+@keyframes heroUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+.eyebrow,h1,.lead,.actions{animation:heroUp .7s ease both}
+.lead{animation-delay:.1s}.actions{animation-delay:.2s}
+.heroCard{animation:heroUp .8s ease .15s both}
+.btn{transition:transform .25s ease,box-shadow .25s ease}
+.btn:hover{transform:translateY(-3px);box-shadow:0 12px 26px #00000022}
+.navbtn{transition:transform .2s ease}.navbtn:hover{transform:translateY(-2px)}
+.card,.step{transition:transform .35s ease,box-shadow .35s ease}
+.card:hover{transform:translateY(-6px);box-shadow:0 18px 40px #10111414}
+.step:hover{transform:translateY(-4px)}
+.opt{transition:border-color .2s ease,background .2s ease}
+.opt:hover{border-color:var(--yellow);background:#fffaf0}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.reveal.show{opacity:1;transform:translateY(0)}
+</style>
+</head>
+<body>
+<header><div class="wrap"><nav>
+<a class="brand" href="#home"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+PHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iMTQiIGZpbGw9IiMxMTEyMTQiLz48dGV4dCB4PSIzMiIgeT0iNDUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgSGVsdmV0aWNhLCBzYW5zLXNlcmlmIiBmb250LXdlaWdodD0iODAwIiBmb250LXNpemU9IjM2IiBmaWxsPSIjZmZiZjAwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5LPC90ZXh0Pjwvc3ZnPg==" alt="KatchUp logo"><span>KatchUp</span></a>
+<div class="links" id="navLinks"><a href="#services">What we build</a><a href="#process">Process</a><a href="#pricing">Pricing</a><a href="#order">Order</a><a href="#terms">Terms</a></div>
+<a class="navbtn" href="https://wa.me/27607197417" target="_blank">WhatsApp</a><button class="mobile" id="mobileBtn" aria-expanded="false" aria-label="Toggle menu">☰</button>
+</nav></div></header>
+<main id="home">
+<section class="hero"><div class="wrap heroGrid"><div><div class="eyebrow"><i class="dot"></i> Websites for businesses</div>
+<h1>Look serious.<br><span>Get online.</span></h1><p class="lead">KatchUp builds reliable, functional and affordable websites for businesses that want a professional online presence without unnecessary complexity.</p>
+<div class="actions"><a class="btn yellow" href="#order">Build my website →</a><a class="btn light" href="https://wa.me/27607197417" target="_blank">Chat on WhatsApp</a></div></div>
+<aside class="heroCard" id="pricing"><h2>A professional website, without the agency price tag.</h2><p>Simple pricing. Clear scope. A website built around what your business actually needs.</p>
+<div class="price"><div class="priceRow"><div><small>Starting at</small><strong>R2,000</strong></div><em>1 page</em></div><div style="color:#bbb;font-size:13px;margin-top:9px">+ R250 for every additional page</div></div>
+<div class="ticks"><div>✓ Responsive</div><div>✓ Modern design</div><div>✓ Functional CTAs</div><div>✓ Build-ready</div></div></aside></div></section>
+
+<section id="services"><div class="wrap"><div class="head"><h2>Built for real businesses.</h2><p>Professional design, useful functionality and a clean experience across phones, tablets and desktops.</p></div>
+<div class="cards"><article class="card"><div class="icon">✦</div><h3>Premium design</h3><p>Modern layouts designed to make your business look credible and professional.</p></article><article class="card"><div class="icon">⚡</div><h3>Functional websites</h3><p>Clear calls-to-action, contact options and useful sections built around customers.</p></article><article class="card"><div class="icon">◉</div><h3>Mobile-first</h3><p>Your website adapts to different screens so customers can use it anywhere.</p></article></div></div></section>
+
+<section class="soft" id="process"><div class="wrap"><div class="head"><h2>How KatchUp works.</h2><p>You tell us what you need. We turn that brief into a website you can actually use.</p></div>
+<div class="steps"><div class="step"><small>01 / BRIEF</small><h3>You describe it.</h3><p>Choose pages and features, then explain what the website is for.</p></div><div class="step"><small>02 / BUILD</small><h3>We build it.</h3><p>KatchUp turns your requirements into a polished responsive website.</p></div><div class="step"><small>03 / LAUNCH</small><h3>We publish it.</h3><p>Your finished website is set up and published live, ready for customers to visit.</p></div></div></div></section>
+
+<section id="order"><div class="wrap order"><aside class="info"><h2>Tell us what you need.</h2><p>Fill in the brief. Your requirements are labelled as a KatchUp website-build request.</p><div class="list"><div><b>✓</b> Base website: R2,000</div><div><b>✓</b> Extra pages: R250 each</div><div><b>✓</b> Custom business content</div><div><b>✓</b> Build-ready project package</div></div></aside>
+<div class="form"><form id="orderForm">
+<input type="hidden" name="build-trigger" value="KATCHUP_BUILD_REQUEST"><input type="hidden" name="email-subject" id="emailSubject"><input type="hidden" name="estimated-price" id="estimatedPrice">
+<div class="grid">
+<div class="field"><label>Your name *</label><input name="customer-name" required></div><div class="field"><label>Business name *</label><input id="business" name="business-name" required></div>
+<div class="field"><label>Email *</label><input name="customer-email" type="email" required></div><div class="field"><label>WhatsApp / phone *</label><input name="customer-phone" required></div>
+<div class="field full"><label>What is the website for? *</label><textarea name="website-purpose" required placeholder="What does your business do, who is the site for, and what should customers do?"></textarea></div>
+<div class="field full"><label>Number of pages *</label><input id="pages" name="number-of-pages" type="number" min="1" value="1" required></div>
+<div class="field full"><label>Design direction</label><select name="design-direction"><option>Modern & premium</option><option>Minimal & clean</option><option>Bold & energetic</option><option>Luxury & elegant</option><option>Let KatchUp decide</option></select></div>
+<div class="field full"><label>What should it include?</label><div class="options">
+<label class="opt"><input type="checkbox" name="feature-contact" value="Contact form">Contact form</label><label class="opt"><input type="checkbox" name="feature-whatsapp" value="WhatsApp button">WhatsApp button</label>
+<label class="opt"><input type="checkbox" name="feature-maps" value="Google Maps">Google Maps</label><label class="opt"><input type="checkbox" name="feature-reviews" value="Reviews">Reviews</label>
+<label class="opt"><input type="checkbox" name="feature-gallery" value="Gallery">Photo gallery</label><label class="opt"><input type="checkbox" name="feature-social" value="Social links">Social links</label>
+<label class="opt"><input type="checkbox" name="feature-booking" value="Booking">Booking / enquiry</label><label class="opt"><input type="checkbox" name="feature-custom" value="Custom feature">Other custom feature</label>
+</div></div>
+<div class="field full"><label>Anything else we should know?</label><textarea name="additional-requirements" placeholder="Colours, services, address, social links, examples you like, special functionality, etc."></textarea></div>
+</div>
+<div class="total"><div><small>Estimated price</small><strong id="totalPrice">R2,000</strong></div><button class="btn yellow" type="submit">Send website brief →</button></div>
+<p class="note">Clicking send automatically emails the full brief to <b>katchupsite@gmail.com</b> — no email app opens, nothing for the visitor to send manually.</p>
+</form></div></div></section>
+
+<section id="terms"><div class="wrap"><div class="head"><h2>Terms & conditions.</h2><p>Simple terms so both KatchUp and its customers know what to expect.</p></div>
+<div class="termsBox">
+<h3>1. Pricing</h3><p>A one-page website costs R2,000. Each additional page costs R250. Separately agreed custom functionality or third-party costs may be quoted separately.</p>
+<h3>2. Payment</h3><p>The customer agrees to pay the agreed website price. KatchUp may require a deposit before work starts, with the balance due before final delivery or launch unless another written arrangement is made.</p>
+<h3>3. Customer content</h3><p>The customer is responsible for supplying accurate business information, images, logos, contact details and other content. Delays in supplying required content can delay the project.</p>
+<h3>4. Revisions</h3><p>Reasonable revisions within the agreed scope are included. Major changes to the design, structure or functionality after approval may cost extra.</p>
+<h3>5. Delivery and ownership</h3><p>Once the agreed amount has been paid, the customer receives the completed website files and may use the website for their business. Third-party assets and services remain subject to their own licence terms.</p>
+<h3>6. Domain and hosting</h3><p>Domain registration, paid hosting, premium services, APIs and other third-party charges are not included unless specifically agreed. The customer is responsible for ongoing third-party fees.</p>
+<h3>7. Customer-provided material</h3><p>The customer confirms they have permission to use material they provide. KatchUp is not responsible for unlawful or misleading content supplied by the customer.</p>
+<h3>8. Third-party features</h3><p>KatchUp will aim to make agreed features work as described, but external services can change or become unavailable outside KatchUp's control.</p>
+<h3>9. Cancellation</h3><p>If the customer cancels after work has started, payment may be due for work already completed. Refunds or deposits will be handled according to the project agreement.</p>
+<h3>10. Acceptance</h3><p>By ordering a website, the customer confirms that they have read these terms and agree to the pricing and project conditions applicable to the order.</p>
+<p style="margin-top:18px;font-size:12px">These are general business terms, not legal advice. Consider having them reviewed by a qualified South African legal professional before using them commercially.</p>
+</div></div></section>
+</main>
+<footer><div class="wrap foot"><div>© <span id="year"></span> KatchUp · Websites for businesses</div><div>Contact: <a href="mailto:katchupsite@gmail.com">katchupsite@gmail.com</a> · <a href="tel:+27607197417">060 719 7417</a></div></div></footer>
+<script>
+const pages=document.getElementById('pages'),price=document.getElementById('totalPrice'),estimated=document.getElementById('estimatedPrice'),subject=document.getElementById('emailSubject'),business=document.getElementById('business');
+function calc(){let n=parseInt(pages.value);if(isNaN(n))n=1;let base=2000;let p=base+(Math.max(1,n)-1)*250;price.textContent='R'+p.toLocaleString('en-ZA');estimated.value='R'+p.toLocaleString('en-ZA')}
+function clampPages(){let n=Math.max(1,parseInt(pages.value||1));pages.value=n;calc()}
+pages.addEventListener('input',calc);pages.addEventListener('blur',clampPages);calc();
+const orderForm=document.getElementById('orderForm');
+const submitBtn=orderForm.querySelector('button[type=submit]');
+const statusMsg=document.createElement('p');
+statusMsg.className='note';
+statusMsg.style.marginTop='10px';
+submitBtn.closest('.total').insertAdjacentElement('afterend',statusMsg);
+
+orderForm.addEventListener('submit',async function(e){
+  e.preventDefault();
+  clampPages();
+  const f=e.target;
+  const val=n=>(f[n]&&f[n].value?f[n].value.trim():'');
+  const biz=val('business-name')||'New business website';
+  subject.value='[KATCHUP_BUILD_REQUEST] Website order — '+biz;
+  const features=Array.from(f.querySelectorAll('.options input[type=checkbox]:checked')).map(c=>c.value).join(', ')||'None selected';
+  const bodyLines=[
+    '=== KATCHUP_BUILD_REQUEST ===',
+    'Customer name: '+val('customer-name'),
+    'Business name: '+biz,
+    'Email: '+val('customer-email'),
+    'Phone: '+val('customer-phone'),
+    'Number of pages: '+pages.value,
+    'Design direction: '+val('design-direction'),
+    'Requested features: '+features,
+    '',
+    'What the website is for:',
+    val('website-purpose'),
+    '',
+    'Additional requirements:',
+    (val('additional-requirements')||'None'),
+    '',
+    'Estimated price: '+price.textContent,
+    '=== END KATCHUP_BUILD_REQUEST ==='
+  ];
+
+  submitBtn.disabled=true;
+  const originalLabel=submitBtn.textContent;
+  submitBtn.textContent='Sending…';
+  statusMsg.textContent='';
+
+  try{
+    const res=await fetch('https://formsubmit.co/ajax/katchupsite@gmail.com',{
+      method:'POST',
+      headers:{'Content-Type':'application/json',Accept:'application/json'},
+      body:JSON.stringify({
+        _subject:subject.value,
+        _template:'table',
+        _replyto:val('customer-email'),
+        Customer_name:val('customer-name'),
+        Business_name:biz,
+        Email:val('customer-email'),
+        Phone:val('customer-phone'),
+        Number_of_pages:pages.value,
+        Design_direction:val('design-direction'),
+        Requested_features:features,
+        What_the_website_is_for:val('website-purpose'),
+        Additional_requirements:val('additional-requirements')||'None',
+        Estimated_price:price.textContent
+      })
+    });
+    if(res.ok){
+      statusMsg.textContent='✓ Brief sent! We\'ll be in touch shortly.';
+      statusMsg.style.color='#0a7d2c';
+      orderForm.reset();
+      calc();
+    }else{
+      throw new Error('Request failed');
+    }
+  }catch(err){
+    statusMsg.textContent='Something went wrong sending your brief — please try again or WhatsApp us directly.';
+    statusMsg.style.color='#b00020';
+  }finally{
+    submitBtn.disabled=false;
+    submitBtn.textContent=originalLabel;
+  }
+});
+document.getElementById('year').textContent=new Date().getFullYear();
+const mobileBtn=document.getElementById('mobileBtn'),navLinks=document.getElementById('navLinks');
+function setMenu(open){navLinks.classList.toggle('open',open);mobileBtn.textContent=open?'✕':'☰';mobileBtn.setAttribute('aria-expanded',open)}
+mobileBtn.addEventListener('click',()=>setMenu(!navLinks.classList.contains('open')));
+navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>setMenu(false)));
+document.addEventListener('click',e=>{if(navLinks.classList.contains('open')&&!navLinks.contains(e.target)&&e.target!==mobileBtn)setMenu(false)});
+const revealTargets=document.querySelectorAll('.head,.card,.step,.info,.form,.termsBox');
+revealTargets.forEach(el=>el.classList.add('reveal'));
+if('IntersectionObserver' in window){
+  const io=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('show');io.unobserve(entry.target)}})},{threshold:.15});
+  revealTargets.forEach(el=>io.observe(el));
+}else{
+  revealTargets.forEach(el=>el.classList.add('show'));
+}
+</script></body></html>
