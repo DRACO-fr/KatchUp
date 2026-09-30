@@ -167,7 +167,7 @@ orderForm.addEventListener('submit',async function(e){
   statusMsg.textContent='';
 
   try{
-    const res=await fetch('https://formsubmit.co/ajax/katchupsite@gmail.com',{
+    const ctrl=new AbortController(),tm=setTimeout(()=>ctrl.abort(),15000);const res=await fetch('https://formsubmit.co/ajax/katchupsite@gmail.com',{signal:ctrl.signal,
       method:'POST',
       headers:{'Content-Type':'application/json',Accept:'application/json'},
       body:JSON.stringify({
@@ -187,7 +187,7 @@ orderForm.addEventListener('submit',async function(e){
         Estimated_price:price.textContent
       })
     });
-    if(res.ok){
+    clearTimeout(tm);let data={};try{data=await res.clone().json()}catch(_){}if(res.ok&&String(data.success)!=='false'){
       statusMsg.textContent='✓ Brief sent! We\'ll be in touch shortly.';
       statusMsg.style.color='#0a7d2c';
       orderForm.reset();planeGo();
@@ -198,7 +198,7 @@ orderForm.addEventListener('submit',async function(e){
       throw new Error(detail||('HTTP '+res.status));
     }
   }catch(err){
-    statusMsg.textContent='Something went wrong sending your brief ('+err.message+'). Please try again or WhatsApp us directly.';
+    statusMsg.textContent=err.name==='AbortError'?'No response after 15 seconds. You can try again, or send your brief on WhatsApp instead.':'Something went wrong sending your brief ('+err.message+'). You can try again, or send it on WhatsApp instead.';const a=document.createElement('a');a.className='btn yellow';a.target='_blank';a.rel='noopener';a.textContent='Send to WhatsApp instead';a.href='https://wa.me/27607197417?text='+encodeURIComponent(waText());a.style.cssText='display:flex;margin-top:10px;font-size:14px;color:#111';statusMsg.appendChild(a);
     statusMsg.style.color='#b00020';
     console.error('FormSubmit error:',err);
   }finally{
@@ -207,6 +207,7 @@ orderForm.addEventListener('submit',async function(e){
   }
 });
 
+function waText(){const v=n=>orderForm[n]&&orderForm[n].value?orderForm[n].value.trim():'';const ft=Array.from(orderForm.querySelectorAll('.options input:checked')).map(c=>c.value).join(', ')||'None';return 'Hi KatchUp, I would like a website.\nName: '+v('customer-name')+'\nBusiness: '+v('business-name')+'\nEmail: '+v('customer-email')+'\nPhone: '+v('customer-phone')+'\nPages: '+v('number-of-pages')+'\nDesign: '+v('design-direction')+'\nFeatures: '+ft+'\nPurpose: '+v('website-purpose')+'\nExtra: '+(v('additional-requirements')||'None')+'\nEstimate: '+price.textContent}
 function planeGo(){const pl=document.querySelector('.plane');pl.classList.add('go');setTimeout(()=>pl.classList.remove('go'),1900)}
 document.querySelectorAll('.field').forEach((f,n)=>{const l=f.querySelector(':scope>label'),i=f.querySelector(':scope>input,:scope>textarea,:scope>select');if(l&&i){i.id=i.id||'f'+n;l.htmlFor=i.id}});
 (function(){const map={'.head':'','.card':'pop','.step':'','.info':'from-l','.form':'from-r','.termsBox':'','.foot':''},els=[];
