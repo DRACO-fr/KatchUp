@@ -43,6 +43,32 @@ footer{padding:30px 0;border-top:1px solid var(--line);color:#777;font-size:13px
 .opt:hover{border-color:var(--yellow);background:#fffaf0}
 .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
 .reveal.show{opacity:1;transform:translateY(0)}
+
+section{scroll-margin-top:84px}#pricing{scroll-margin-top:100px}
+.hero{position:relative;overflow:hidden}.hero .wrap{position:relative;z-index:1}
+.reveal.from-l{transform:translateX(-36px)}.reveal.from-r{transform:translateX(36px)}.reveal.pop{transform:translateY(20px) scale(.94)}
+.reveal.show{opacity:1;transform:none}
+.mascot{display:block;width:150px;margin-top:34px;overflow:visible}.toon{display:block;width:64px;height:64px;margin-bottom:10px;overflow:visible}
+.bob{animation:bob 3s ease-in-out infinite}
+.eyes{animation:blink 4s infinite;transform-box:fill-box;transform-origin:center}
+.wave{animation:wave 1.6s ease-in-out infinite;transform-box:fill-box;transform-origin:0 100%}
+.pencil{animation:write 1.8s ease-in-out infinite;transform-box:fill-box;transform-origin:0 100%}
+.gear{animation:spin 6s linear infinite;transform-box:fill-box;transform-origin:center}
+.rocket{animation:lift 2.2s ease-in-out infinite}.flame{animation:flame .25s ease-in-out infinite alternate;transform-box:fill-box;transform-origin:50% 0}
+.deco{position:absolute;pointer-events:none;opacity:.7;animation:drift 7s ease-in-out infinite}
+.d1{top:125px;left:4%;width:30px}.d2{top:200px;right:3%;width:38px;animation-delay:-2s}.d3{bottom:60px;left:46%;width:50px;animation-delay:-4s}
+.icon{animation:bob 3.2s ease-in-out infinite}.card:nth-child(2) .icon{animation-delay:-1s}.card:nth-child(3) .icon{animation-delay:-2s}
+.plane{display:block;width:84px;margin-top:24px;overflow:visible;animation:drift 4s ease-in-out infinite}.plane.go{animation:planeGo 1.3s ease-in forwards}
+@keyframes bob{50%{transform:translateY(-7px)}}
+@keyframes blink{0%,92%,100%{transform:scaleY(1)}96%{transform:scaleY(.1)}}
+@keyframes wave{50%{transform:rotate(-22deg)}}
+@keyframes write{0%,100%{transform:rotate(0) translateX(0)}50%{transform:rotate(-8deg) translateX(14px)}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes lift{50%{transform:translateY(-6px) rotate(3deg)}}
+@keyframes flame{to{transform:scaleY(1.5)}}
+@keyframes drift{50%{transform:translateY(-12px) rotate(8deg)}}
+@keyframes planeGo{to{transform:translate(260px,-120px) rotate(18deg);opacity:0}}
+@media(prefers-reduced-motion:reduce){*,*:before{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
 </style>
 </head>
 <body>
@@ -52,9 +78,9 @@ footer{padding:30px 0;border-top:1px solid var(--line);color:#777;font-size:13px
 <a class="navbtn" href="https://wa.me/27607197417" target="_blank">WhatsApp</a><button class="mobile" id="mobileBtn" aria-expanded="false" aria-label="Toggle menu">☰</button>
 </nav></div></header>
 <main id="home">
-<section class="hero"><div class="wrap heroGrid"><div><div class="eyebrow"><i class="dot"></i> Websites for businesses</div>
+<section class="hero"><svg class="deco d1" viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.7-5.4 4.7 1.6 7L12 17.3 5.8 21l1.6-7L2 9.3l7.1-.7z" fill="#ffbf00"/></svg><svg class="deco d2" viewBox="0 0 40 40"><circle cx="20" cy="20" r="14" fill="none" stroke="#111" stroke-width="5" opacity=".15"/></svg><svg class="deco d3" viewBox="0 0 40 16"><path d="M2 8q5-10 10 0t10 0 10 0" fill="none" stroke="#ffbf00" stroke-width="4" stroke-linecap="round"/></svg><div class="wrap heroGrid"><div><div class="eyebrow"><i class="dot"></i> Websites for businesses</div>
 <h1>Look serious.<br><span>Get online.</span></h1><p class="lead">KatchUp builds reliable, functional and affordable websites for businesses that want a professional online presence without unnecessary complexity.</p>
-<div class="actions"><a class="btn yellow" href="#order">Build my website →</a><a class="btn light" href="https://wa.me/27607197417" target="_blank">Chat on WhatsApp</a></div></div>
+<div class="actions"><a class="btn yellow" href="#order">Build my website →</a><a class="btn light" href="https://wa.me/27607197417" target="_blank">Chat on WhatsApp</a></div><svg class="mascot" viewBox="0 0 170 140" aria-hidden="true"><g class="bob"><rect x="25" y="20" width="110" height="74" rx="10" fill="#111214"/><rect x="33" y="28" width="94" height="58" rx="6" fill="#ffbf00"/><g class="eyes"><ellipse cx="64" cy="52" rx="6" ry="8" fill="#111214"/><ellipse cx="96" cy="52" rx="6" ry="8" fill="#111214"/></g><circle cx="52" cy="66" r="5" fill="#ff9a8a" opacity=".7"/><circle cx="108" cy="66" r="5" fill="#ff9a8a" opacity=".7"/><path d="M70 66q10 9 20 0" stroke="#111214" stroke-width="4" fill="none" stroke-linecap="round"/><path d="M10 100h140l-10 14H20z" fill="#2a2c31"/><g class="wave"><path d="M135 72q22-6 20-30" stroke="#111214" stroke-width="6" fill="none" stroke-linecap="round"/><circle cx="155" cy="38" r="8" fill="#ffbf00" stroke="#111214" stroke-width="3"/></g></g></svg></div>
 <aside class="heroCard" id="pricing"><h2>A professional website, without the agency price tag.</h2><p>Simple pricing. Clear scope. A website built around what your business actually needs.</p>
 <div class="price"><div class="priceRow"><div><small>Starting at</small><strong>R2,000</strong></div><em>1 page</em></div><div style="color:#bbb;font-size:13px;margin-top:9px">+ R250 for every additional page</div></div>
 <div class="ticks"><div>✓ Responsive</div><div>✓ Modern design</div><div>✓ Functional CTAs</div><div>✓ Build-ready</div></div></aside></div></section>
@@ -63,10 +89,10 @@ footer{padding:30px 0;border-top:1px solid var(--line);color:#777;font-size:13px
 <div class="cards"><article class="card"><div class="icon">✦</div><h3>Premium design</h3><p>Modern layouts designed to make your business look credible and professional.</p></article><article class="card"><div class="icon">⚡</div><h3>Functional websites</h3><p>Clear calls-to-action, contact options and useful sections built around customers.</p></article><article class="card"><div class="icon">◉</div><h3>Mobile-first</h3><p>Your website adapts to different screens so customers can use it anywhere.</p></article></div></div></section>
 
 <section class="soft" id="process"><div class="wrap"><div class="head"><h2>How KatchUp works.</h2><p>You tell us what you need. We turn that brief into a website you can actually use.</p></div>
-<div class="steps"><div class="step"><small>01 / BRIEF</small><h3>You describe it.</h3><p>Choose pages and features, then explain what the website is for.</p></div><div class="step"><small>02 / BUILD</small><h3>We build it.</h3><p>KatchUp turns your requirements into a polished responsive website.</p></div><div class="step"><small>03 / LAUNCH</small><h3>We publish it.</h3><p>Your finished website is set up and published live, ready for customers to visit.</p></div></div></div></section>
+<div class="steps"><div class="step"><svg class="toon" viewBox="0 0 64 64"><path d="M8 56h48" stroke="#ccc" stroke-width="3" stroke-linecap="round"/><g class="pencil"><path d="M14 42l24-24 8 8-24 24-10 2z" fill="#ffbf00" stroke="#111214" stroke-width="3" stroke-linejoin="round"/></g></svg><small>01 / BRIEF</small><h3>You describe it.</h3><p>Choose pages and features, then explain what the website is for.</p></div><div class="step"><svg class="toon" viewBox="0 0 64 64"><g class="gear"><circle cx="32" cy="32" r="18" fill="none" stroke="#111214" stroke-width="9" stroke-dasharray="7 7"/><circle cx="32" cy="32" r="15" fill="#ffbf00" stroke="#111214" stroke-width="3"/><circle cx="32" cy="32" r="5" fill="#fff" stroke="#111214" stroke-width="3"/></g></svg><small>02 / BUILD</small><h3>We build it.</h3><p>KatchUp turns your requirements into a polished responsive website.</p></div><div class="step"><svg class="toon" viewBox="0 0 64 64"><g class="rocket"><path d="M32 4c10 8 12 22 8 36H24C20 26 22 12 32 4z" fill="#fff" stroke="#111214" stroke-width="3"/><circle cx="32" cy="22" r="5" fill="#ffbf00" stroke="#111214" stroke-width="2"/><path d="M24 40l-8 8 8-2zM40 40l8 8-8-2z" fill="#ffbf00" stroke="#111214" stroke-width="2"/><path class="flame" d="M28 42q4 16 8 0z" fill="#ff7a00"/></g></svg><small>03 / LAUNCH</small><h3>We publish it.</h3><p>Your finished website is set up and published live, ready for customers to visit.</p></div></div></div></section>
 
-<section id="order"><div class="wrap order"><aside class="info"><h2>Tell us what you need.</h2><p>Fill in the brief. Your requirements are labelled as a KatchUp website-build request.</p><div class="list"><div><b>✓</b> Base website: R2,000</div><div><b>✓</b> Extra pages: R250 each</div><div><b>✓</b> Custom business content</div><div><b>✓</b> Build-ready project package</div></div></aside>
-<div class="form"><form id="orderForm">
+<section id="order"><div class="wrap order"><aside class="info"><h2>Tell us what you need.</h2><p>Fill in the brief. Your requirements are labelled as a KatchUp website-build request.</p><div class="list"><div><b>✓</b> Base website: R2,000</div><div><b>✓</b> Extra pages: R250 each</div><div><b>✓</b> Custom business content</div><div><b>✓</b> Build-ready project package</div></div><svg class="plane" viewBox="0 0 64 64" aria-hidden="true"><path d="M4 30L60 6 40 58 30 36z" fill="#ffbf00" stroke="#fff" stroke-width="3" stroke-linejoin="round"/><path d="M30 36L60 6" stroke="#111214" stroke-width="3"/></svg></aside>
+<div class="form"><form id="orderForm"><input name="company-website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px">
 <div class="grid">
 <div class="field"><label>Your name *</label><input name="customer-name" required></div><div class="field"><label>Business name *</label><input id="business" name="business-name" required></div>
 <div class="field"><label>Email *</label><input name="customer-email" type="email" required></div><div class="field"><label>WhatsApp / phone *</label><input name="customer-phone" required></div>
@@ -82,7 +108,7 @@ footer{padding:30px 0;border-top:1px solid var(--line);color:#777;font-size:13px
 <div class="field full"><label>Anything else we should know?</label><textarea name="additional-requirements" placeholder="Colours, services, address, social links, examples you like, special functionality, etc."></textarea></div>
 </div>
 <div class="total"><div><small>Estimated price</small><strong id="totalPrice">R2,000</strong></div><button class="btn yellow" type="submit">Send website brief →</button></div>
-<p class="note">Clicking send opens WhatsApp with your full brief pre-filled, ready to send to <b>060 719 7417</b>.</p>
+<p class="note">Clicking send automatically emails the full brief to <b>katchupsite@gmail.com</b> — no email app opens, nothing for the visitor to send manually.</p>
 </form></div></div></section>
 
 <section id="terms"><div class="wrap"><div class="head"><h2>Terms & conditions.</h2><p>Simple terms so both KatchUp and its customers know what to expect.</p></div>
@@ -118,6 +144,7 @@ const pages=document.getElementById('pages'),price=document.getElementById('tota
 function calc(){let n=parseInt(pages.value);if(isNaN(n))n=1;let base=2000;let p=base+(Math.max(1,n)-1)*250;price.textContent='R'+p.toLocaleString('en-ZA')}
 function clampPages(){let n=Math.max(1,parseInt(pages.value||1));pages.value=n;calc()}
 pages.addEventListener('input',calc);pages.addEventListener('blur',clampPages);calc();
+
 const orderForm=document.getElementById('orderForm');
 const submitBtn=orderForm.querySelector('button[type=submit]');
 const statusMsg=document.createElement('p');
@@ -125,38 +152,66 @@ statusMsg.className='note';
 statusMsg.style.marginTop='10px';
 submitBtn.closest('.total').insertAdjacentElement('afterend',statusMsg);
 
-const WHATSAPP_NUMBER='27607197417'; // 060 719 7417 in international format, no + or leading 0
-
-orderForm.addEventListener('submit',function(e){
-  e.preventDefault();
+orderForm.addEventListener('submit',async function(e){
+  e.preventDefault();if(orderForm["company-website"].value)return;
   clampPages();
   const f=orderForm;
   const val=n=>(f[n]&&f[n].value?f[n].value.trim():'');
   const biz=val('business-name')||'New business website';
+  const subjectLine='[KATCHUP_BUILD_REQUEST] Website order — '+biz;
   const features=Array.from(f.querySelectorAll('.options input[type=checkbox]:checked')).map(c=>c.value).join(', ')||'None selected';
-  const lines=[
-    '=== KATCHUP_BUILD_REQUEST ===',
-    'Customer name: '+val('customer-name'),
-    'Business name: '+biz,
-    'Email: '+val('customer-email'),
-    'Phone: '+val('customer-phone'),
-    'Number of pages: '+pages.value,
-    'Design direction: '+val('design-direction'),
-    'Requested features: '+features,
-    '',
-    'What the website is for:',
-    val('website-purpose'),
-    '',
-    'Additional requirements:',
-    (val('additional-requirements')||'None'),
-    '',
-    'Estimated price: '+price.textContent,
-    '=== END KATCHUP_BUILD_REQUEST ==='
-  ];
-  const waUrl='https://wa.me/'+WHATSAPP_NUMBER+'?text='+encodeURIComponent(lines.join('\n'));
-  statusMsg.textContent='Opening WhatsApp — just hit send there to finish.';
-  statusMsg.style.color='#0a7d2c';
-  window.location.href=waUrl;
+
+  submitBtn.disabled=true;
+  const originalLabel=submitBtn.textContent;
+  submitBtn.textContent='Sending…';
+  statusMsg.textContent='';
+
+  try{
+    const res=await fetch('https://formsubmit.co/ajax/katchupsite@gmail.com',{
+      method:'POST',
+      headers:{'Content-Type':'application/json',Accept:'application/json'},
+      body:JSON.stringify({
+        _subject:subjectLine,
+        _template:'table',
+        _captcha:'false',
+        _replyto:val('customer-email'),
+        Customer_name:val('customer-name'),
+        Business_name:biz,
+        Email:val('customer-email'),
+        Phone:val('customer-phone'),
+        Number_of_pages:pages.value,
+        Design_direction:val('design-direction'),
+        Requested_features:features,
+        What_the_website_is_for:val('website-purpose'),
+        Additional_requirements:val('additional-requirements')||'None',
+        Estimated_price:price.textContent
+      })
+    });
+    if(res.ok){
+      statusMsg.textContent='✓ Brief sent! We\'ll be in touch shortly.';
+      statusMsg.style.color='#0a7d2c';
+      orderForm.reset();planeGo();
+      calc();
+    }else{
+      let detail='';
+      try{const j=await res.json();detail=j.message||j.error||'';}catch(_){}
+      throw new Error(detail||('HTTP '+res.status));
+    }
+  }catch(err){
+    statusMsg.textContent='Something went wrong sending your brief ('+err.message+'). Please try again or WhatsApp us directly.';
+    statusMsg.style.color='#b00020';
+    console.error('FormSubmit error:',err);
+  }finally{
+    submitBtn.disabled=false;
+    submitBtn.textContent=originalLabel;
+  }
 });
 
+function planeGo(){const pl=document.querySelector('.plane');pl.classList.add('go');setTimeout(()=>pl.classList.remove('go'),1900)}
+document.querySelectorAll('.field').forEach((f,n)=>{const l=f.querySelector(':scope>label'),i=f.querySelector(':scope>input,:scope>textarea,:scope>select');if(l&&i){i.id=i.id||'f'+n;l.htmlFor=i.id}});
+(function(){const map={'.head':'','.card':'pop','.step':'','.info':'from-l','.form':'from-r','.termsBox':'','.foot':''},els=[];
+for(const s in map)document.querySelectorAll(s).forEach((e,i)=>{e.classList.add('reveal');if(map[s])e.classList.add(map[s]);e.style.transitionDelay=(s==='.card'||s==='.step'?i*130:0)+'ms';els.push(e)});
+if(!('IntersectionObserver' in window)){els.forEach(e=>e.classList.add('show'));return}
+const io=new IntersectionObserver(es=>es.forEach(en=>{if(!en.isIntersecting)return;const e=en.target;e.classList.add('show');io.unobserve(e);setTimeout(()=>{e.classList.remove('reveal','show','pop','from-l','from-r');e.style.transitionDelay=''},1500)}),{threshold:.12,rootMargin:'0px 0px -6% 0px'});
+els.forEach(e=>io.observe(e))})();
 </script></body></html>
