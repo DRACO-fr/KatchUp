@@ -167,17 +167,16 @@ orderForm.addEventListener('submit',async function(e){
   statusMsg.textContent='';
 
   try{
-    const ctrl=new AbortController(),tm=setTimeout(()=>ctrl.abort(),15000);const res=await fetch('https://formsubmit.co/ajax/katchupsite@gmail.com',{signal:ctrl.signal,
+    const ctrl=new AbortController(),tm=setTimeout(()=>ctrl.abort(),15000);const res=await fetch('https://api.web3forms.com/submit',{signal:ctrl.signal,
       method:'POST',
       headers:{'Content-Type':'application/json',Accept:'application/json'},
       body:JSON.stringify({
-        _subject:subjectLine,
-        _template:'table',
-        _captcha:'false',
-        _replyto:val('customer-email'),
-        Customer_name:val('customer-name'),
+        access_key:'40f2f960-8f56-4f08-83ac-dcdee5c144bf',
+        subject:subjectLine,
+        from_name:'KatchUp Website',
+        name:val('customer-name'),
+        email:val('customer-email'),
         Business_name:biz,
-        Email:val('customer-email'),
         Phone:val('customer-phone'),
         Number_of_pages:pages.value,
         Design_direction:val('design-direction'),
@@ -193,14 +192,12 @@ orderForm.addEventListener('submit',async function(e){
       orderForm.reset();planeGo();
       calc();
     }else{
-      let detail='';
-      try{const j=await res.json();detail=j.message||j.error||'';}catch(_){}
-      throw new Error(detail||('HTTP '+res.status));
+      throw new Error(data.message||('HTTP '+res.status));
     }
   }catch(err){
     statusMsg.textContent=err.name==='AbortError'?'No response after 15 seconds. You can try again, or send your brief on WhatsApp instead.':'Something went wrong sending your brief ('+err.message+'). You can try again, or send it on WhatsApp instead.';const a=document.createElement('a');a.className='btn yellow';a.target='_blank';a.rel='noopener';a.textContent='Send to WhatsApp instead';a.href='https://wa.me/27607197417?text='+encodeURIComponent(waText());a.style.cssText='display:flex;margin-top:10px;font-size:14px;color:#111';statusMsg.appendChild(a);
     statusMsg.style.color='#b00020';
-    console.error('FormSubmit error:',err);
+    console.error('Form send error:',err);
   }finally{
     submitBtn.disabled=false;
     submitBtn.textContent=originalLabel;
